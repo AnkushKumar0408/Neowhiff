@@ -1,0 +1,77 @@
+/* .title{
+    text-align: center;
+    color:  #000F38;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase; */
+    /* background-color: #000F38; */
+    /* margin: 70px 0px 30px;
+    padding: 60px; */
+    /* background-color: aqua; */
+/* } */
+
+/* .title h2{
+    font-size: 32px;
+    color: #e73a3a ;
+    margin-top: 5px;
+    text-transform: none;
+} */
+
+/* Title Container */
+.title {
+    text-align: center;
+    color: #000F38;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* margin: 10px 0px 30px; */
+    padding: 10px;
+}
+
+/* Title Heading */
+.title h2 {
+    font-size: 32px;
+    color: #e73a3a;
+    margin-top: 5px;
+    text-transform: none;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .title {
+        padding: 40px;
+        margin: 50px 0px 20px;
+    }
+
+    .title h2 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+    .title {
+        padding: 30px;
+        margin: 40px 0px 15px;
+        font-size: 14px;
+    }
+
+    .title h2 {
+        font-size: 24px;
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .title {
+        padding: 20px;
+        margin: 30px 0px 10px;
+        font-size: 13px;
+    }
+
+    .title h2 {
+        font-size: 20px;
+    }
+}
