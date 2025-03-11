@@ -163,3 +163,9 @@
         max-width: 280px;
     }
 }
+
+@media screen and (min-height: 700px){
+    .hero-Image{
+        height: 480px;
+    }
+}
