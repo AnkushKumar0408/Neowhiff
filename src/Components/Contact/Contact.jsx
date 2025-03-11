@@ -76,6 +76,14 @@ const Contact = () => {
             name="phone"
             placeholder="Enter your mobile number"
             required
+            pattern="[0-9]{10}"
+          />
+          <label>Email Id</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Ex : example@gmail.com"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
           />
           <label>Write your message here</label>
           <textarea

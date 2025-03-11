@@ -13,12 +13,12 @@ const Programs = () => {
     {
       title: "Insights and Reports",
       content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, consectetur optio animi accusantium eveniet aliquid.",
+        "By choosing our services, you get all the insights and reports, so that you can improve your further strategy.",
     },
     {
-      title: "Market Analysis",
+      title: "Highly personalised and feature-rich solutions",
       content:
-        "Market analysis helps businesses understand industry trends, customer preferences, and competition to make informed decisions.",
+        "You get highly customer personalized and feature-rich solutions for your business that will lead to growing the business.",
     },
     {
       title: "Strategic Planning",
@@ -26,25 +26,27 @@ const Programs = () => {
         "Strategic planning enables businesses to set goals, allocate resources effectively, and stay ahead in a competitive market.",
     },
   ];
- 
+
   return (
     <div className="services">
       <div className="left-service">
-        <p>Services offered</p>
-        <h1>We Help You Reach The World Through</h1>
+        <p>WHAT WE DO</p>
+        <h1>Neowhiff Solutions Offers The Best Features</h1>
         <div className="offers">
           {offers.map((offer, index) => (
             <div key={index} className="offer">
-              <h2 onClick={() => toggleContent(index)}>
+              <h2 style={{color:"#ffa641"}} onClick={() => toggleContent(index)}>
                 <span className="toggle-icon">{activeIndex === index ? "-" : "+"}</span> {offer.title}
               </h2>
-              {activeIndex === index && <p>{offer.content}</p>}
+              <div className={`content ${activeIndex === index ? "open" : ""}`}>
+                <p style={{color:"black",fontSize:"20px",fontFamily:"serif"}}>{offer.content}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
       <div className="right-service">
-        <img src={program1} alt="" />
+        <img src={program1} alt="Service" />
       </div>
     </div>
   );

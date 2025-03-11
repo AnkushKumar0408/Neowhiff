@@ -1,30 +1,9 @@
-/* .title{
-    text-align: center;
-    color:  #000F38;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase; */
-    /* background-color: #000F38; */
-    /* margin: 70px 0px 30px;
-    padding: 60px; */
-    /* background-color: aqua; */
-/* } */
-
-/* .title h2{
-    font-size: 32px;
-    color: #e73a3a ;
-    margin-top: 5px;
-    text-transform: none;
-} */
-
-/* Title Container */
 .title {
     text-align: center;
     color: #000F38;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
-    /* margin: 10px 0px 30px; */
     padding: 10px;
 }
 

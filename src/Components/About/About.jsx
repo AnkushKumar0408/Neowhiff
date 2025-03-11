@@ -3,61 +3,62 @@ import "./About.css";
 
 const About = () => {
   const [content, setContent] = useState({
-    heading3: "ABOUT UNIVERSITY",
-    heading2: "Nurturing Tomorrow's Leaders Today",
-    paragraph: "Click on a box to see more details."
+    title: "FOUNDER & DIRECTOR",
+    name: "Atul Chauhan",
+    description:
+      "The visionary founder of Digiwhiff, holds an MBA with a concentration in marketing from Delhi Business School. With over 11 years of experience in sales and business development, Atul has consistently driven growth and innovation in the communications industry.",
+    additionalInfo: "Click on the boxes to know more about us...",
   });
 
   const contentData = {
     ex1: {
-      heading3: "EXAMPLE 1 - INTRO",
-      heading2: "Introduction to Example 1",
-      paragraph:
-        "This is detailed information about Example 1. It explains the fundamental aspects of this topic."
+      title: "About Us - Neowhiff Solutions",
+      name: "WHAT WE DO",
+      description:
+        "Digiwhiff is a leading communication provider helping businesses connect with customers effectively through API-based solutions. We serve all types of businesses, from startups to market leaders, ensuring seamless communication across internet and telecom channels.",
     },
     ex2: {
-      heading3: "EXAMPLE 2 - OVERVIEW",
-      heading2: "Understanding Example 2",
-      paragraph:
-        "Example 2 focuses on key concepts and provides an in-depth explanation of various elements."
+      title: "Our Story",
+      name: "Digiwhiff Story",
+      description:
+        "We empower organizations with effective communication strategies and advanced tools.",
+      additionalInfo: "Established in July 2021 | 100+ Enterprise Clients by May 2023 | 250+ Clients by March 2024",
     },
     ex3: {
-      heading3: "EXAMPLE 3 - ADVANCED",
-      heading2: "Deep Dive into Example 3",
-      paragraph:
-        "Explore the advanced features and implementations of Example 3 in this section."
+      title: "Company Vision",
+      name: "OUR VISION",
+      description:
+        "Our vision is to build a high-quality, secure communication platform for businesses to connect, engage, and create lasting relationships with customers.",
     },
     ex4: {
-      heading3: "EXAMPLE 4 - SUMMARY",
-      heading2: "Final Thoughts on Example 4",
-      paragraph:
-        "A complete summary and conclusion regarding Example 4, summarizing the main takeaways."
-    }
+      title: "Company Mission",
+      name: "OUR MISSION",
+      description:
+        "Our mission is to develop a secure, cloud-based communication platform that enables businesses to engage with customers effortlessly.",
+    },
   };
 
   return (
-    <div className="about">
-      <div className="about-left">
-        <div className="ex" onClick={() => setContent(contentData.ex1)}>
-          <h1>Example1</h1>
-        </div>
-        <div className="ex" onClick={() => setContent(contentData.ex2)}>
-          <h1>Example2</h1>
-        </div>
-        <div className="ex" onClick={() => setContent(contentData.ex3)}>
-          <h1>Example3</h1>
-        </div>
-        <div className="ex" onClick={() => setContent(contentData.ex4)}>
-          <h1>Example4</h1>
-        </div>
+    <section className="about-container">
+      {/* Left Section - Interactive Boxes */}
+      <div className="about-options">
+        {Object.keys(contentData).map((key) => (
+          <div className="about-box" key={key} onClick={() => setContent(contentData[key])}>
+            <h1 style={{fontFamily:"inherit",fontWeight:"900"}}>{contentData[key].name}</h1>
+          </div>
+        ))}
       </div>
-      <div className="about-right">
-        <h3>{content.heading3}</h3>
-        <h2>{content.heading2}</h2>
-        <p>{content.paragraph}</p>
-      </div>
-    </div>
+
+      {/* Right Section - Dynamic Content */}
+      <article className="about-content">
+        <h3>{content.title}</h3>
+        <h2 style={{color:"#ffa641"}}>{content.name}</h2>
+        <p>{content.description}</p>
+        {content.additionalInfo && <p className="highlight-text" style={{color:"black"}}>{content.additionalInfo}</p>}
+      </article>
+    </section>
   );
 };
 
 export default About;
+

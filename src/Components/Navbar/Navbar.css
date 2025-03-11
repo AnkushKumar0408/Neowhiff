@@ -1,144 +1,24 @@
-/* nav{
-    width : 100%; */
-    /* background: #333; */
-    /* background-color: white;
-    color: #000000;
-    padding: 20px 0;
+/* General Navbar Styling */
+.navbar {
+    width: 96%;
+    background: white;
+    color: #e73a3a;
+    padding: 15px 40px;
     position: fixed;
     top: 10px;
-    left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10;
-    border-radius: 105px;
-} */
- 
-/* .logo{
-    width: 180px;
-}
-
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 5px 20px;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-
-
-.dark-nav{
-    background: #fff;
-    transition: 0.5s;
-    box-shadow: 0px 0px 10px rgba(100, 37, 37, 0.4);
-}
-
-.menu-icon{
-    display: none;
-}
-
-nav ul span{
-    position: absolute;
-    top: 10px;
-    left: 745px;
-    width: 80px;
-    height: 70%;
-    background: linear-gradient(45deg,#ff8585,#ff3333);
-    border-radius: 8px;
-    transition: all .5s ease-in-out;
-    z-index: -1;
-} */
-
-/* nav ul li:nth-child(1):hover~span{
-    left: 745px;
-}
-
-nav ul li:nth-child(2):hover~span{
-    left: 832px;
-    width: 90px;
-}
-
-nav ul li:nth-child(3):hover~span{
-    left: 927px;
-    width: 110px;
-}
-nav ul li:nth-child(4):hover~span{
-    left: 1047px;
-} 
-nav ul li:nth-child(5):hover~span{
-    left: 1138px;
-    width: 130px;
-} */
-
-/* ------- Media Query ----------- */
-
-/* @media (max-width: 1000px){
-    .logo{
-        width: 140px;
-    }
-    nav ul li{
-        margin: 10px 15px;
-    }
-}
-
-@media (max-width: 840px){
-    nav{
-        padding: 15px 0;
-
-    }
-
-    nav ul{
-        position: fixed;
-        top: 0;
-        bottom : 0;
-        right: 0;
-        background: #212EA0;
-        z-index: -1;
-        width: 200px;
-        padding-top: 70px;
-        transition: 0.5s;
-    }
-
-    nav ul li{
-        display: block;
-        margin: 25px 40px;
-    }
-
-    .menu-icon{
-        display: block;
-        width: 30px;
-        cursor: pointer;
-    }
-
-    .hide-mobile-menu{
-        right: -200px;
-    }
-} */
-
-
- 
-nav {
-    width: 100%;
-    background-color: white;
-    color: #000000;
-    padding: 20px 40px;
-    position: fixed;
-    top: 10px;
-    left: 0;
+    left: 2%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
     border-radius: 50px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
 }
 
 /* Sticky Navbar Effect */
 .dark-nav {
-    background: #fff;
-    transition: 0.5s;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0px 4px 10px rgba(100, 37, 37, 0.4);
 }
 
@@ -146,38 +26,45 @@ nav {
 .logo {
     width: 180px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* Navigation Links */
-nav ul {
+.nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
+    transition: 0.3s ease-in-out;
 }
 
 /* Navbar Items */
-nav ul li {
+.nav-links li {
     list-style: none;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
 
-nav ul li:hover {
-    color: #e73a3a;
-}
-
-/* Active Indicator */
-nav ul span {
+.nav-links li::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #e73a3a;
     position: absolute;
-    top: 10px;
-    width: 80px;
-    height: 70%;
-    background: linear-gradient(45deg, #ff8585, #ff3333);
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
-    z-index: -1;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
 }
 
 /* Contact Button */
@@ -190,20 +77,21 @@ nav ul span {
     cursor: pointer;
     border: none;
     outline: none;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
     background: #c93030;
+    transform: scale(1.05);
 }
 
-/* Hamburger Menu Icon */
+/* Hamburger / Close Icon */
 .menu-icon {
     display: none;
-    width: 25px;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    /* background-color: #000000; */
-    z-index: 11;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* ------- Responsive Design ----------- */
@@ -214,19 +102,19 @@ nav ul span {
         width: 150px;
     }
 
-    nav ul {
-        gap: 15px;
+    .nav-links {
+        gap: 20px;
     }
 
-    nav ul li {
+    .nav-links li {
         font-size: 16px;
     }
 }
 
-/* Tablets (Max Width: 768px) */
+/* Tablets & Mobile (Max Width: 768px) */
 @media (max-width: 768px) {
-    nav {
-        padding: 15px 30px;
+    .navbar {
+        padding: 15px 25px;
         border-radius: 30px;
     }
 
@@ -234,40 +122,41 @@ nav ul span {
         width: 140px;
     }
 
-    nav ul {
+    .menu-icon {
+        display: block;
+        z-index: 1100;
+    }
+
+    /* Mobile Menu */
+    .nav-links {
         position: fixed;
         top: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.9);
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        width: 220px;
-        padding-top: 70px;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
-        transition: 0.5s;
+        transition: right 0.4s ease-in-out;
     }
 
-    nav ul li {
-        display: block;
+    .nav-links li {
         font-size: 18px;
-        margin: 20px 0;
+        margin: 15px 0;
     }
 
-    .menu-icon {
-        display: block;
-    }
-
-    .hide-mobile-menu {
-        right: -250px;
+    .show-menu {
+        right: 0;
     }
 }
 
 /* Mobile Devices (Max Width: 480px) */
 @media (max-width: 480px) {
-    nav {
+    .navbar {
         padding: 10px 20px;
         border-radius: 20px;
     }
@@ -276,11 +165,11 @@ nav ul span {
         width: 120px;
     }
 
-    nav ul {
-        width: 200px;
+    .nav-links {
+        width: 220px;
     }
 
-    nav ul li {
+    .nav-links li {
         font-size: 16px;
     }
 
