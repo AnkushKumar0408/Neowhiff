@@ -4,9 +4,9 @@ import "./About.css";
 const About = () => {
   const [content, setContent] = useState({
     title: "FOUNDER & DIRECTOR",
-    name: "Atul Chauhan",
+    name: "Arun Chauhan",
     description:
-      "The visionary founder of Digiwhiff, holds an MBA with a concentration in marketing from Delhi Business School. With over 11 years of experience in sales and business development, Atul has consistently driven growth and innovation in the communications industry.",
+      "The visionary founder of Neowhiff, holds an MBA with a concentration in marketing from Delhi Business School. With over 11 years of experience in sales and business development, Atul has consistently driven growth and innovation in the communications industry.",
     additionalInfo: "Click on the boxes to know more about us...",
   });
 
@@ -15,11 +15,11 @@ const About = () => {
       title: "About Us - Neowhiff Solutions",
       name: "WHAT WE DO",
       description:
-        "Digiwhiff is a leading communication provider helping businesses connect with customers effectively through API-based solutions. We serve all types of businesses, from startups to market leaders, ensuring seamless communication across internet and telecom channels.",
+        "Neowhiff is a leading communication provider helping businesses connect with customers effectively through API-based solutions. We serve all types of businesses, from startups to market leaders, ensuring seamless communication across internet and telecom channels.",
     },
     ex2: {
       title: "Our Story",
-      name: "Digiwhiff Story",
+      name: "Neowhiff Story",
       description:
         "We empower organizations with effective communication strategies and advanced tools.",
       additionalInfo: "Established in July 2021 | 100+ Enterprise Clients by May 2023 | 250+ Clients by March 2024",

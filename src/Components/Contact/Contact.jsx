@@ -35,29 +35,30 @@ const Contact = () => {
     <div className="contact">
       <div className="contact-col">
         <h3>
-          Send Us a Message <img src={msg_icon} alt="" />
+          Get in Touch <img src={msg_icon} alt="" />
         </h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet
-          minima facilis numquam doloribus modi commodi quod ea omnis. Aliquid,
-          sed debitis! Earum impedit eos iure.
+          Have any questions or need assistance? Feel free to reach out to us.
+          Our team is here to help you with any inquiries related to our
+          services. Drop us a message, and we'll get back to you as soon as
+          possible!
         </p>
         <ul>
           <li>
             {" "}
             <img src={mail_icon} alt="" />
-            ankushkumar7669@gmail.com
+            arun@neowhiff.com
           </li>
           <li>
             {" "}
             <img src={phone_icon} alt="" />
-            +91 8505832598
+            +91 9999799821
           </li>
           <li>
             {" "}
             <img src={location_icon} alt="" />
-            56/19 Kishan Colony, Prahladpur
-            <br /> Delhi 110042, India
+            H-146, Sector 63
+            <br /> Noida, UP 201301
           </li>
         </ul>
       </div>

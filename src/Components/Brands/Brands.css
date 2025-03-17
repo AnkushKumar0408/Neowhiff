@@ -41,8 +41,10 @@
 
 .brand-slide img {
     width: 8vw;
+    height: 9vh;
     min-width: 100px;
     transition: transform 0.3s ease;
+    object-fit: contain;
 }
 
 .brand-slide img:hover {

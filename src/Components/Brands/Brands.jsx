@@ -1,8 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Brands.css";
-import image1 from "../../assets/Brand1.jpg";
+import image1 from "../../assets/Bank1.png";
+import image2 from "../../assets/Bank2.png";
+import image3 from "../../assets/Bank3.png";
+import image4 from "../../assets/Bank4.png";
+import image5 from "../../assets/Bank5.png";
+import image6 from "../../assets/Bank6.png";
+import image7 from "../../assets/Bank7.png";
+import image8 from "../../assets/Bank8.png";
+import image9 from "../../assets/Bank9.png";
 
-const images = [image1, image1, image1, image1, image1, image1, image1, image1];
+const images = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+];
 
 const Brands = () => {
   const [clients, setClients] = useState(0);
@@ -49,7 +67,9 @@ const Brands = () => {
 
   return (
     <div className="brands" ref={sectionRef}>
-      <h1><span className="splFont">Trusted by Leading Global Brands</span></h1>
+      <h1>
+        <span className="splFont">Trusted by Leading Global Brands</span>
+      </h1>
       <div className="brand-slider">
         <div className="brand-slide">
           {images.map((src, index) => (
@@ -62,7 +82,10 @@ const Brands = () => {
       </div>
       <div className="achiev">
         <h3>Our Achievements</h3>
-        <p>Enhancing customer <span className="splFont">engagement</span> with top-tier <span className="splFont">solutions</span></p>
+        <p>
+          Enhancing customer <span className="splFont">engagement</span> with
+          top-tier <span className="splFont">solutions</span>
+        </p>
         <div className="numbers">
           <div className="clients">
             <h1>{clients}+</h1>

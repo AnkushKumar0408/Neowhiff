@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo4.png";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,58 +17,123 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle Mobile Menu
   const toggleMenu = () => {
     setMobileMenu((prev) => !prev);
   };
 
-  // Close menu on link click
   const closeMenu = () => {
     setMobileMenu(false);
   };
 
   return (
     <nav className={`navbar ${sticky ? "dark-nav" : ""}`}>
-      <Link to="hero" smooth={true} offset={-100} duration={500}>
-        <img src={logo} alt="Logo" className="logo" />
-      </Link>
+      {window.location.pathname === "/loan" ? (
+        // If on loan page, clicking the logo redirects to the home page
+        <RouterLink to="/">
+          <img src={logo} alt="Logo" className="logo" />
+        </RouterLink>
+      ) : (
+        // On other pages, scrolls to the top of the page
+        <ScrollLink to="hero" smooth={true} offset={-100} duration={500}>
+          <img src={logo} alt="Logo" className="logo" />
+        </ScrollLink>
+      )}
 
-      {/* Navigation Links */}
-      <ul className={`nav-links ${mobileMenu ? "show-menu" : ""}`} >
-        {[
-          { link: "hero", name: "Home" },
-          { link: "brands", name: "Achievments" },
-          { link: "Services", name: "Services" },
-          { link: "about-container", name: "About Us" },
-          { link: "testimonial-page", name: "Reviews" },
-        ].map((item, index) => (
-          <li key={index}>
-            <Link
-              to={item.link.toLowerCase().replace(" ", "-")}
-              smooth={true}
-              offset={-85}
-              duration={500}
-              onClick={closeMenu} // Close menu when clicking on a link
-            >
-              {item.name}
-            </Link>
-          </li>
-        ))}
+      <ul className={`nav-links ${mobileMenu ? "show-menu" : ""}`}>
+        {location.pathname === "/" ? (
+          <>
+            {[
+              { link: "hero", name: "Home" },
+              { link: "brands", name: "Achievments" },
+              { link: "services", name: "Services" },
+              { link: "about-container", name: "About Us" },
+              { link: "testimonial-page", name: "Reviews" },
+            ].map((item, index) => (
+              <li key={index}>
+                <ScrollLink
+                  to={item.link}
+                  smooth={true}
+                  offset={-85}
+                  duration={500}
+                  onClick={closeMenu}
+                >
+                  {item.name}
+                </ScrollLink>
+              </li>
+            ))}
+          </>
+        ) : (
+          // If not on the home page, clicking links should return to "/"
+          <>
+            <li>
+              <RouterLink to="/" onClick={closeMenu} className="loan-nav">
+                Home
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/" onClick={closeMenu} className="loan-nav">
+                Achievements
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/" onClick={closeMenu} className="loan-nav">
+                Services
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/" onClick={closeMenu} className="loan-nav">
+                About Us
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/" onClick={closeMenu} className="loan-nav">
+                Reviews
+              </RouterLink>
+            </li>
+          </>
+        )}
+        {/* Loan Page Link */}
         <li>
-          <Link
+          <RouterLink to="/loan" onClick={closeMenu} className="loan-nav">
+            Loan
+          </RouterLink>
+        </li>
+
+        {window.location.pathname === "/loan" ? (
+          // If on loan page, clicking the logo redirects to the home page
+          <RouterLink to="/" className="btn">
+            <li>Contact us</li>
+          </RouterLink>
+        ) : (
+          // On other pages, scrolls to the top of the page
+          <li>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              offset={-80}
+              duration={500}
+              className="btn"
+              onClick={closeMenu}
+            >
+              Contact us
+            </ScrollLink>
+          </li>
+        )}
+
+        {/* <li>
+          <ScrollLink
             to="contact"
             smooth={true}
             offset={-80}
             duration={500}
             className="btn"
-            onClick={closeMenu} // Close menu when clicking on Contact Us
+            onClick={closeMenu}
           >
             Contact us
-          </Link>
-        </li>
+          </ScrollLink>
+        </li> */}
       </ul>
 
-      {/* Hamburger / Cross Icon */}
       <div className="menu-icon" onClick={toggleMenu}>
         {mobileMenu ? "✖" : "☰"}
       </div>

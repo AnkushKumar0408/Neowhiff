@@ -40,7 +40,7 @@
     gap: 25px;
     transition: 0.3s ease-in-out;
 }
-
+ 
 /* Navbar Items */
 .nav-links li {
     list-style: none;
@@ -78,11 +78,22 @@
     border: none;
     outline: none;
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .btn:hover {
     background: #c93030;
     transform: scale(1.05);
+}
+
+.loan-nav{
+    text-decoration: none;
+    color: #e73a3a;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
 
 /* Hamburger / Close Icon */
