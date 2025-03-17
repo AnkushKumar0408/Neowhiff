@@ -1,6 +1,7 @@
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import "./Hero.css";
 import homeImg from "../../assets/MainBanner.svg";
+import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -10,26 +11,39 @@ const Hero = () => {
     deleteSpeed: 80,
   });
 
-  const handleRedirect = () => {
-    window.location.href = "https://testyesha.netlify.app/";
-  };
-
   return (
     <div className="hero container">
       <div className="hero-text">
-        <h1 style={{fontWeight:'900'}}>
+        <h1 style={{ fontWeight: "900" }}>
           {text}
           <Cursor />
         </h1>
         <h4>CONNECT WITH EASE</h4>
         <p>
-          Instant <span className="splFont">Connections. Seamless <br />
-          Communication.</span> Strengthen Customer <br />
+          Instant{" "}
+          <span className="splFont">
+            Connections. Seamless <br />
+            Communication.
+          </span>{" "}
+          Strengthen Customer <br />
           Relationships.
         </p>
 
-        <button className="btn" onClick={handleRedirect}>
-          Exolore More
+        <button className="btn">
+          <ScrollLink
+            to="services"
+            smooth={true}
+            offset={-90}
+            duration={500}
+            style={{
+              textDecoration: "None",
+              margin: "10px",
+              color: "black",
+              cursor: "pointer",
+            }}
+          >
+            Explore More
+          </ScrollLink>
         </button>
       </div>
       <div className="hero-Image">

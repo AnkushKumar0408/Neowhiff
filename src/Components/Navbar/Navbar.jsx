@@ -94,9 +94,12 @@ const Navbar = () => {
         )}
         {/* Loan Page Link */}
         <li>
-          <RouterLink to="/loan" onClick={closeMenu} className="loan-nav">
+          <a
+            href="https://testyesha.netlify.app/#/products"
+            className="loan-nav"
+          >
             Loan
-          </RouterLink>
+          </a>
         </li>
 
         {window.location.pathname === "/loan" ? (
